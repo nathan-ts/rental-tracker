@@ -8,3 +8,6 @@
 		</a>
 	</div>
 </template>
+
+<script>
+</script>

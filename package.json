@@ -1,0 +1,23 @@
+{
+  "name": "rental-tracker",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "start": "nuxt start"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-regular-svg-icons": "^6.1.2",
+    "@fortawesome/free-solid-svg-icons": "^6.1.2",
+    "@fortawesome/vue-fontawesome": "^2.0.8",
+    "@nuxtjs/fontawesome": "^1.1.2",
+    "@nuxtjs/tailwindcss": "^3.4.2",
+    "nuxt": "^2.14.6",
+    "tailwindcss": "^2.0.2"
+  }
+}

@@ -1,5 +1,5 @@
 <template>
-	<div class="p-4 bg-gray-100 text-base">
+	<div class="p-4 bg-gray-100">
 		<p>
 			This project is for learning purposes only.
 		</p>

@@ -1,4 +1,3 @@
-
 export default {
 	// mode: 'universal',
 
@@ -27,7 +26,8 @@ export default {
 	 */
 	buildModules: [
 		// Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-		'@nuxtjs/tailwindcss'
+		'@nuxtjs/tailwindcss',
+		'@nuxtjs/fontawesome'
 	],
 
 	/*
@@ -45,7 +45,14 @@ export default {
 		extend (config, ctx) {
 		}
 	},
-	// auto import components
-	components: true
+	// Auto import components
+	components: true,
+	// Set up Font Awesome icon packs
+	fontawesome: {
+		icons: {
+		 solid: true,
+		 regular: true
+		}
+	},
 
 }

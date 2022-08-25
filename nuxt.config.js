@@ -19,7 +19,9 @@ export default {
 	/*
 	 * Plugins to load before mounting the App
 	 */
-	plugins: [],
+	plugins: [
+		'~/plugins/fontawesome.js',
+	],
 
 	/*
 	 * Nuxt.js dev-modules
@@ -45,8 +47,10 @@ export default {
 		extend (config, ctx) {
 		}
 	},
+
 	// Auto import components
 	components: true,
+
 	// Set up Font Awesome icon packs
 	fontawesome: {
 		icons: {
@@ -54,5 +58,8 @@ export default {
 		 regular: true
 		}
 	},
+	css: [
+		'@fortawesome/fontawesome-svg-core/styles.css',
+	]
 
 }

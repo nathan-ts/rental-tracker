@@ -5,7 +5,7 @@
 			flex flex-col
 			mx-auto
 			min-w-min
-			max-w-md
+			max-w-sm
 		">
 			<Header />
 			<nuxt />

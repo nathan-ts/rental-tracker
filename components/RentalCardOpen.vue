@@ -1,8 +1,8 @@
 <template>
-	<div>
+	<div class="rental-card-open">
 		<div class="card-header">
-			<div>House</div>
-			<font-awesome-icon :icon="['fas', 'angle-up']"/>
+			<div>Rental</div>
+			<font-awesome-icon :icon="['fas', 'angle-up']" class="text-xl"/>
 		</div>
 		<div class="card-body">
 			<div class="name">

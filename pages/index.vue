@@ -1,9 +1,7 @@
 <template>
-	<main class="flex p-4 bg-gray-100 text-lg flex-col flex-1">
-		<p>Index</p>
-
+	<main class="flex p-4 text-lg bg-gray-100 flex-col flex-1">
 		<NewLocation />
-		<RentalCard />
+		<RentalCardOpen />
 		<RentalCard />
 		<RentalCard />
 		<RentalCard />

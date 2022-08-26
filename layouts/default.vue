@@ -3,10 +3,9 @@
 		<div class="
 			h-screen
 			flex flex-col
-			border-2 border-black
 			mx-auto
 			min-w-min
-			max-w-lg
+			max-w-md
 		">
 			<Header />
 			<nuxt />

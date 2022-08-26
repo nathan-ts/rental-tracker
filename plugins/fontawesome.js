@@ -13,5 +13,6 @@ config.autoAddCss = false;
 library.add(fas);
 library.add(far);
 
+
 // Register the component globally
 Vue.component('font-awesome-icon', FontAwesomeIcon);

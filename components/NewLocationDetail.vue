@@ -19,8 +19,8 @@
 			p-6
 			space-y-4
 		">
-			<div class="title">Title *</div>
-			<div class="phone">Enter the address *</div>
+      <InputField label="Title *"/>
+      <InputField label="Enter the address *"/>
 		</div>
 		<div class="card-contact-info
 			w-full
@@ -33,18 +33,14 @@
 				border-t-2
 				border-cyan-100
 				pt-6
-				flex flex-row
+				flex flex-col
 				justify-between
 				text-xs tracking-wide
 			">
-				<div class="full-name text-base">
-					<div class="pb-1">Full name *</div>
-					<input
-						v-model="text" placeholder="Full name"
-						class="border-2 border-gray-500 rounded-md p-2"
-					/>
-				</div>
-				<InputField />
+				<InputField label="Full name *"/>
+				<InputField label="Job position *"/>
+				<InputField label="Email address *"/>
+				<InputField label="Phone *"/>
 			</div>
 		</div>
 		<div class="card-save
@@ -68,4 +64,5 @@
 </template>
 
 <script>
+// add validation for save button
 </script>

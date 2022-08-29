@@ -34,6 +34,7 @@
 				<InputField label="Email address *"/>
 				<InputField label="Phone *"/>
 				<InputField :label="label" v-model="model" />
+				<p>The value is: {{ model }}</p>
 			</div>
 			<div class="card-save
 				p-6
@@ -52,17 +53,17 @@
 
 <script>
 export default {
-    props: {
-        edit: {
-            type: Boolean,
-            default: false,
-        },
-    },
-    data() {
-        return {
-            label: "Test",
-            model: "",
-        };
-    },
+	props: {
+		edit: {
+				type: Boolean,
+				default: false,
+		},
+	},
+	data() {
+		return {
+				label: "Test",
+				model: "",
+		};
+	},
 }
 </script>

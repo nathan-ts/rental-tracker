@@ -4,7 +4,7 @@
 	<label>
 		<div class="pb-1">{{ label }}</div>
 		<input
-			type="text" v-model="value"
+			type="text" :name="name" :value="value"
 			@input="$emit('input', $event.target.value)"
 			required="required"
 			class="w-full border border-gray-400 rounded-md p-2"
@@ -23,7 +23,6 @@ export default {
     },
 		value: {
       type: String,
-			required: true,
     }
   },
 }

@@ -1,11 +1,15 @@
 <template>
 
 <div class="text-base">
-	<div class="pb-1">{{ label }}</div>
-	<input
-		v-model="text"
-		class="w-full border-2 border-gray-400 rounded-md p-2"
-	/>
+	<label>
+		<div class="pb-1">{{ label }}</div>
+		<input
+			type="text" v-model="value"
+			@input="$emit('input', $event.target.value)"
+			required="required"
+			class="w-full border border-gray-400 rounded-md p-2"
+		/>
+	</label>
 </div>
 
 </template>
@@ -15,8 +19,12 @@ export default {
   props: {
     label: {
 			required: true,
-      type: String
+      type: String,
     },
-  }
+		value: {
+      type: String,
+			required: true,
+    }
+  },
 }
 </script>

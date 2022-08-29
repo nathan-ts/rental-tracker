@@ -11,7 +11,7 @@
 			p-6
 			flex flex-row justify-between items-center
 		">
-			<div class="h3 text-base font-bold">{{title}} Location</div>
+			<div class="h3 text-base font-bold">{{ title }} Location</div>
 			<!-- change New Location to a variable depending on edit status passed in -->
 			<font-awesome-icon :icon="['fas', 'xmark']" class="text-xl text-gray-300"/>
 		</div>
@@ -53,6 +53,7 @@
 
 <script>
 export default {
+	name: "LocationDetail",
 	props: {
 		edit: {
 				type: Boolean,

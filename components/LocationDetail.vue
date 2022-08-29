@@ -14,34 +14,30 @@
 			<div class="h3 text-base font-bold">New Location</div>
 			<font-awesome-icon :icon="['fas', 'xmark']" class="text-xl text-gray-300"/>
 		</div>
-		<div class="card-hq-info
+		<div class="card-info
 			w-full
 			p-6
-			space-y-4
+			space-y-6
 		">
-      <InputField label="Title *"/>
-      <InputField label="Enter the address *"/>
-		</div>
-		<div class="card-contact-info
-			w-full
-			p-6
-		">
-			<div class="text-sm text-cyan-500 tracking-wide pb-4">
+			<InputField label="Title *"/>
+			<InputField label="Enter the address *"/>
+			<div class="text-sm text-cyan-500 tracking-wide
+				border-b-2
+				border-cyan-100
+				pb-2
+			">
 				CONTACT INFORMATION
 			</div>
-			<div class="line-break
-				border-t-2
-				border-cyan-100
-				pt-6
+			<!-- <div class="line-break
 				flex flex-col
 				justify-between
 				text-xs tracking-wide
-			">
+			"> -->
 				<InputField label="Full name *"/>
 				<InputField label="Job position *"/>
 				<InputField label="Email address *"/>
 				<InputField label="Phone *"/>
-			</div>
+			<!-- </div> -->
 		</div>
 		<div class="card-save
 			p-6

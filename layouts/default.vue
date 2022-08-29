@@ -1,7 +1,6 @@
 <template>
-	<div class="h-screen bg-gray-100">
+	<div class="h-full bg-gray-100">
 		<div class="
-			h-screen
 			flex flex-col
 			mx-auto
 			min-w-min

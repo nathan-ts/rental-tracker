@@ -9,7 +9,7 @@
       w-full px-6 py-4
       flex flex-row justify-between items-center
     ">
-      <div class="h3 text-base font-bold">{{ title }} Location</div>
+      <div class="h3 text-base font-bold">{{ detailType }} Location</div>
       <font-awesome-icon
         :icon="['fas', 'xmark']"
         class="text-xl text-gray-300"
@@ -21,20 +21,18 @@
         w-full
         p-6 space-y-6
       ">
-        <InputField label="Title *"/>
-        <InputField label="Enter the address *"/>
+        <InputField label="Title *" v-model="title"/>
+        <InputField label="Enter the address *" v-model="address"/>
         <div class="contact-info-header py-2
           border-b-2 border-cyan-100
           text-sm text-cyan-500 tracking-wide
         ">
           CONTACT INFORMATION
         </div>
-        <InputField label="Full name *"/>
-        <InputField label="Job position *"/>
-        <InputField label="Email address *"/>
-        <InputField label="Phone *"/>
-        <InputField :label="label" default="init value" v-model="model" />
-        <p>The value is: {{ model }}</p>
+        <InputField label="Full name *" v-model="name"/>
+        <InputField label="Job position *" v-model="position"/>
+        <InputField label="Email address *" v-model="email"/>
+        <InputField label="Phone *" v-model="phone"/>
       </div>
       <div class="card-save
         p-6
@@ -63,10 +61,16 @@
     },
     data() {
       return {
-        label: "Test",
-        model: "",
-        title: this.edit ? "Edit" : "New",
-      };
+			// Set up header for details section
+			detailType: this.edit ? "Edit" : "New",
+			// Fill input forms with existing data, if any
+			title: this.office ? this.office.title : '',
+			address: this.office ? this.office.address : '',
+			name: this.office ? this.office.name : '',
+			position: this.office ? this.office.position : '',
+			email: this.office ? this.office.email : '',
+			phone: this.office ? this.office.phone : '',
+		};
     },
     methods: {
       showDetail(value) {

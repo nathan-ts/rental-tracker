@@ -1,4 +1,5 @@
 const mockData = [{
+  "id": 0,
   "title": "Melby",
   "address": "579 Melby Court",
   "name": "August Staite",
@@ -6,6 +7,7 @@ const mockData = [{
   "email": "astaite0@gravatar.com",
   "phone": "(291) 8402192"
 }, {
+  "id": 1,
   "title": "Stoughton",
   "address": "016 Stoughton Road",
   "name": "Rosamund Gethin",
@@ -13,6 +15,7 @@ const mockData = [{
   "email": "rgethin1@springer.com",
   "phone": "(500) 4100426"
 }, {
+  "id": 2,
   "title": "Eagan",
   "address": "188 Eagan Crossing",
   "name": "Christy Depport",
@@ -20,6 +23,7 @@ const mockData = [{
   "email": "cdepport2@yellowbook.com",
   "phone": "(372) 9134705"
 }, {
+  "id": 3,
   "title": "Springs",
   "address": "3338 Springs Circle",
   "name": "Addie Fishbourne",
@@ -27,6 +31,7 @@ const mockData = [{
   "email": "afishbourne3@paypal.com",
   "phone": "(824) 9482124"
 }, {
+  "id": 4,
   "title": "Roxbury",
   "address": "98887 Roxbury Way",
   "name": "Avictor Knatt",
@@ -34,6 +39,7 @@ const mockData = [{
   "email": "aknatt4@statcounter.com",
   "phone": "(942) 6746786"
 }, {
+  "id": 5,
   "title": "Crest Line",
   "address": "3 Crest Line Place",
   "name": "Barbabra Emberson",

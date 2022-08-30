@@ -61,16 +61,18 @@
     },
     data() {
       return {
-			// Set up header for details section
-			detailType: this.edit ? "Edit" : "New",
-			// Fill input forms with existing data, if any
-			title: this.office ? this.office.title : '',
-			address: this.office ? this.office.address : '',
-			name: this.office ? this.office.name : '',
-			position: this.office ? this.office.position : '',
-			email: this.office ? this.office.email : '',
-			phone: this.office ? this.office.phone : '',
-		};
+        // label: "Test",
+        // model: "",
+        // Set up header for details section
+        detailType: this.edit ? "Edit" : "New",
+        // Fill input forms with existing data, if any
+        title: this.office ? this.office.title : '',
+        address: this.office ? this.office.address : '',
+        name: this.office ? this.office.name : '',
+        position: this.office ? this.office.position : '',
+        email: this.office ? this.office.email : '',
+        phone: this.office ? this.office.phone : '',
+      };
     },
     methods: {
       showDetail(value) {

@@ -59,6 +59,7 @@
             <font-awesome-icon
               :icon="['fas', 'trash-can']"
               class="text-xl"
+              @click="deleteRental()"
             />
             <div>DELETE</div>
           </div>
@@ -91,6 +92,10 @@
         console.log(`RCO - show edit details: ${value}`);
         this.showEditDetail = value;
       },
+      deleteRental() {
+        console.log(`RCO - deleting rental id ${this.rental.id}`);
+        this.$emit('delete');
+      }
     },
   };
   </script>

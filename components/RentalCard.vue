@@ -20,7 +20,11 @@
     </div>
     <!-- Open Rental Card visible if '﹀' button clicked -->
     <div v-if="showOpenCard">
-      <RentalCardOpen :rental="rental" @input="e => showOpen(e)"/>
+      <RentalCardOpen
+        :rental="rental"
+        @input="e => showOpen(e)"
+        @delete="deleteRental()"
+      />
     </div>
   </div>
   </template>
@@ -38,9 +42,14 @@
     },
     methods: {
       showOpen(value) {
-        console.log(`RC - show open rental card: ${value}`)
+        console.log(`RC - show open rental card: ${value}`);
         this.showOpenCard = value;
       },
+      deleteRental() {
+        console.log(`RC - deleting rental: ${this.rental.id}`);
+        this.showOpenCard = false;
+        this.$emit('delete', this.rental.id);
+      }
     },
   };
   </script>

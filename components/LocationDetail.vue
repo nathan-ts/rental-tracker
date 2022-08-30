@@ -8,12 +8,16 @@
 ">
   <div class="card-header
     w-full
-    p-6
+    px-6
+    py-4
     flex flex-row justify-between items-center
   ">
     <div class="h3 text-base font-bold">{{ title }} Location</div>
-    <!-- change New Location to a variable depending on edit status passed in -->
-    <font-awesome-icon :icon="['fas', 'xmark']" class="text-xl text-gray-300"/>
+    <font-awesome-icon
+      :icon="['fas', 'xmark']"
+      class="text-xl text-gray-300"
+      @click="showDetail(false)"
+    />
   </div>
   <form>
     <div class="card-info
@@ -69,5 +73,10 @@ data() {
     title: this.edit ? "Edit" : "New",
   };
 },
+methods: {
+  showDetail(value) {
+    this.$emit("input", value);
+  },
+}
 }
 </script>

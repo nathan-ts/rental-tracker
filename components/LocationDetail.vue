@@ -52,13 +52,13 @@
   
   <script>
   export default {
+    name: "LocationDetail",
     props: {
       edit: {
         type: Boolean,
         default: false,
       },
-      locData: {
-        type: Array,
+      office: {
       },
     },
     data() {
@@ -70,6 +70,7 @@
     },
     methods: {
       showDetail(value) {
+        console.log(`LD - show details: ${value}`);
         this.$emit("input", value);
       },
     }

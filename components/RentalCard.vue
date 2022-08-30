@@ -15,12 +15,12 @@
       <font-awesome-icon
         :icon="['fas', 'angle-down']"
         class="text-cyan-600 text-xl"
-        @click="showDetail(true)"
+        @click="showOpen(true)"
       />
     </div>
     <!-- Open Rental Card visible if '﹀' button clicked -->
     <div v-if="showOpenCard">
-      <RentalCardOpen :rental="rental" @input="e => showDetail(e)"/>
+      <RentalCardOpen :rental="rental" @input="e => showOpen(e)"/>
     </div>
   </div>
   </template>
@@ -37,9 +37,11 @@
       };
     },
     methods: {
-      showDetail(value) {
+      showOpen(value) {
+        console.log(`RC - show open rental card: ${value}`)
         this.showOpenCard = value;
       },
     },
   };
   </script>
+  

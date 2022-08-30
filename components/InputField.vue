@@ -37,7 +37,10 @@
       },
       value: {
         type: String,
-      }
+      },
+      provided: {
+        type: String,
+      },
     },
     computed: {
       model: {
@@ -45,9 +48,13 @@
           return this.value;
         },
         set(value) {
+          // error checking
           if (!value) {
             this.error = 'This field cannot be empty';
+          } else {
+            this.error = '';
           }
+          // emit value so parent can read it
           this.$emit('input', value);
         },
       },
@@ -57,26 +64,6 @@
         error: '',
       };
     },
-    // methods: {
-    // 	// onInput sets an error if the field is changed and empty
-    //   onInput(event) {
-    // 		const value = event.target.value;
-    //     if (!value) {
-    //       this.error = 'This field cannot be empty';
-    //     }
-    //     this.$emit('input', value);
-    //   }
-    // },
-    // watcher removes error whenever value is not empty
-    // watch: {
-    //   value: {
-    //     handler(value) {
-    //       if (value) {
-    //         this.error = '';
-    //       }
-    //     },
-    //   },
-    // },
   }
   </script>
   

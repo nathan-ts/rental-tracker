@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="rental-card-toggle">
+    <!-- Add Closed Rental Card visible by default -->
     <div v-if="!showOpenCard" class="rental-card
       bg-white
       m-4 p-6
@@ -7,8 +8,8 @@
       shadow-xl
       flex flex-row justify-between items-center
     ">
-      <div class="rental-address">
-        <div class="h3 text-2xl font-semibold">Rental</div>
+      <div class="hq-address">
+        <div class="h3 text-2xl font-semibold">Headquarters</div>
         <div class="h4 text-base text-gray-500">1-1 Chiyoda</div>
       </div>
       <font-awesome-icon
@@ -17,6 +18,7 @@
         @click="showDetail(true)"
       />
     </div>
+    <!-- Open Rental Card visible if '﹀' button clicked -->
     <div v-if="showOpenCard">
       <RentalCardOpen @input="e => showDetail(e)"/>
     </div>
@@ -29,11 +31,12 @@
       return {
         showOpenCard: false,
       };
-  },
-  methods: {
+    },
+    methods: {
       showDetail(value) {
         this.showOpenCard = value;
       },
     },
   };
   </script>
+  

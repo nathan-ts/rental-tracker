@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="new-location-toggle">
 		<!-- Add New Location visible by default -->
 		<div v-if="!showNewLocation" class="new-location
 			bg-cyan-600

@@ -1,4 +1,4 @@
-export default mockData = [{
+const mockData = [{
   "title": "Melby",
   "address": "579 Melby Court",
   "name": "August Staite",
@@ -41,3 +41,5 @@ export default mockData = [{
   "email": "bemberson5@friendfeed.com",
   "phone": "(457) 7380738"
 }];
+
+export default mockData;

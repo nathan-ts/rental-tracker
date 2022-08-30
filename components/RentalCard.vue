@@ -9,8 +9,8 @@
       flex flex-row justify-between items-center
     ">
       <div class="hq-address">
-        <div class="h3 text-2xl font-semibold">Headquarters</div>
-        <div class="h4 text-base text-gray-500">1-1 Chiyoda</div>
+        <div class="h3 text-2xl font-semibold">{{ rental.title }}</div>
+        <div class="h4 text-base text-gray-500">{{ rental.address }}</div>
       </div>
       <font-awesome-icon
         :icon="['fas', 'angle-down']"
@@ -20,13 +20,17 @@
     </div>
     <!-- Open Rental Card visible if '﹀' button clicked -->
     <div v-if="showOpenCard">
-      <RentalCardOpen @input="e => showDetail(e)"/>
+      <RentalCardOpen :rental="rental" @input="e => showDetail(e)"/>
     </div>
   </div>
   </template>
   
   <script>
   export default {
+    props: {
+      rental: {
+      }
+    },
     data() {
       return {
         showOpenCard: false,
@@ -39,4 +43,3 @@
     },
   };
   </script>
-  

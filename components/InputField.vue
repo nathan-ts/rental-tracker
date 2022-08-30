@@ -1,5 +1,4 @@
 <template>
-
   <div class="text-base">
     <label>
       <div class="pb-1">{{ label }}</div>
@@ -18,14 +17,13 @@
         }"
       />
       <font-awesome-icon
+        v-if="error"
         :icon="['fas', 'circle-exclamation']"
         class="text-xl text-red-300 float-right mr-3 -mt-8"
-        v-show="error"
       />
     </label>
     <div v-if="error" class="text-sm text-red-300 pt-1">{{ error }}</div>
   </div>
-  
   </template>
   
   <script>
@@ -38,7 +36,7 @@
       value: {
         type: String,
       },
-      provided: {
+      default: {
         type: String,
       },
     },

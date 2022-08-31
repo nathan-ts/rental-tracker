@@ -37,10 +37,16 @@
         flex flex-row
       ">
         <input type="submit" value="Save"
-          class="save-btn rounded-md
-          bg-cyan-600 text-white
-          px-6 py-2
-        " />
+          cl="save-btn rounded-md
+          text-white
+          bg-cyan-600
+          px-6 py-2"
+          :class="{
+            'bg-cyan-600': this.validInputs,
+            'bg-gray-400': !this.validInputs,
+            'save-btn rounded-md text-white px-6 py-2': true,
+          }"
+        />
       </div>
     </form>
   </div>
@@ -48,7 +54,6 @@
   
   <script>
   export default {
-    name: "LocationDetail",
     props: {
       edit: {
         type: Boolean,
@@ -62,12 +67,6 @@
         // Set up header for details section
         detailType: this.edit ? "Edit" : "New",
         // Fill input forms with existing data, if any
-        // title: this.rental ? this.rental.title : '',
-        // address: this.rental ? this.rental.address : '',
-        // name: this.rental ? this.rental.name : '',
-        // position: this.rental ? this.rental.position : '',
-        // email: this.rental ? this.rental.email : '',
-        // phone: this.rental ? this.rental.phone : '',
         data: this.rental ? { ...this.rental } : {
           title: '',
           address: '',
@@ -84,17 +83,19 @@
         this.$emit('input', value);
       },
       onSubmit() {
-        // const data = {
-        // 	title: this.title,
-        // 	address: this.address,
-        // 	name: this.name,
-        // 	position: this.position,
-        // 	email: this.email,
-        // 	phone: this.phone,
-        // }
         console.log(`LD - Submitting data from form: ${JSON.stringify(this.data)}`);
         this.$emit('save', this.data);
         this.$emit('input', false);
+      }
+    },
+    computed: {
+      // Checks if any field is blank (computed for cached performance)
+      validInputs: function() {
+        if (!this.data.title || !this.data.address || !this.data.name ||
+          !this.data.position || !this.data.email || !this.data.phone) {
+            return false;
+        }
+        return true;
       }
     }
   }

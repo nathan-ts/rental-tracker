@@ -9,11 +9,7 @@
         :class="{
           'border-gray-400': !this.error,
           'border-red-300': this.error,
-          'border': true,
-          'w-full': true,
-          'bg-transparent': true,
-          'rounded-md': true,
-          'p-2': true,
+          'border w-full bg-transparent rounded-md p-2': true,
         }"
       />
       <font-awesome-icon

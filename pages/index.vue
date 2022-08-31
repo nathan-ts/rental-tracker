@@ -14,6 +14,11 @@
 <script>
 import mockData from '../data/mock.js';
 export default {
+  head() {
+    return {
+      title: "Rental Properties"
+    };
+  },
 	data() {
     return {
 			rentals: mockData,

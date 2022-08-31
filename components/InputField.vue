@@ -5,7 +5,7 @@
       <input
         type="text"
         v-model="model"
-        required="required"
+        xrequired="required"
         :class="{
           'border-gray-400': !this.error,
           'border-red-300': this.error,
@@ -43,11 +43,7 @@
         },
         set(value) {
           // error checking
-          if (!value) {
-            this.error = 'This field cannot be empty';
-          } else {
-            this.error = '';
-          }
+          this.validateInput(value);
           // emit value so parent can read it
           this.$emit('input', value);
         },
@@ -57,6 +53,16 @@
       return {
         error: '',
       };
+    },
+    methods: {
+      validateInput(value) {
+        if (!value) {
+          this.error = 'This field cannot be empty';
+          return false;
+        }
+        this.error = '';
+        return true;
+      }
     },
   }
   </script>

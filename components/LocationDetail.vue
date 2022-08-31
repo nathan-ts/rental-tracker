@@ -19,18 +19,18 @@
       <div class="card-info
         w-full p-6 space-y-6
       ">
-        <InputField label="Title *" v-model="data.title"/>
-        <InputField label="Enter the address *" v-model="data.address"/>
+        <InputField label="Title *" ref="titleInput" v-model="data.title"/>
+        <InputField label="Enter the address *" ref="addressInput" v-model="data.address"/>
         <div class="contact-info-header py-2
           border-b-2 border-cyan-100
           text-sm text-cyan-500 tracking-wide
         ">
           CONTACT INFORMATION
         </div>
-        <InputField label="Full name *" v-model="data.name"/>
-        <InputField label="Job position *" v-model="data.position"/>
-        <InputField label="Email address *" v-model="data.email"/>
-        <InputField label="Phone *" v-model="data.phone"/>
+        <InputField label="Full name *" ref="nameInput" v-model="data.name"/>
+        <InputField label="Job position *" ref="positionInput" v-model="data.position"/>
+        <InputField label="Email address *" ref="emailInput" v-model="data.email"/>
+        <InputField label="Phone *" ref="phoneInput" v-model="data.phone"/>
       </div>
       <div class="card-save
         p-6
@@ -43,7 +43,7 @@
           px-6 py-2"
           :class="{
             'bg-cyan-600': this.validInputs,
-            'bg-gray-400': !this.validInputs,
+            'bg-gray-300': !this.validInputs,
             'save-btn rounded-md text-white px-6 py-2': true,
           }"
         />
@@ -83,9 +83,19 @@
         this.$emit('input', value);
       },
       onSubmit() {
-        console.log(`LD - Submitting data from form: ${JSON.stringify(this.data)}`);
-        this.$emit('save', this.data);
-        this.$emit('input', false);
+        if (this.validInputs) {
+          console.log(`LD - Submitting data from form: ${JSON.stringify(this.data)}`);
+          this.$emit('save', this.data);
+          this.$emit('input', false);
+        } else {
+          // Forces all input field children to run their error check
+          this.$refs.titleInput.validateInput(this.data.title);
+          this.$refs.addressInput.validateInput(this.data.address);
+          this.$refs.nameInput.validateInput(this.data.name);
+          this.$refs.positionInput.validateInput(this.data.position);
+          this.$refs.emailInput.validateInput(this.data.email);
+          this.$refs.phoneInput.validateInput(this.data.phone);
+        }
       }
     },
     computed: {
@@ -99,5 +109,4 @@
       }
     }
   }
-  // add save button validation on each input field's values to ensure none are empty
   </script>

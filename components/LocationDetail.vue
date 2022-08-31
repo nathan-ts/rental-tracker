@@ -1,8 +1,7 @@
 <template>
   <div class="new-location-detail
     bg-white
-    m-4 rounded-lg
-    shadow-xl
+    m-4 rounded-lg shadow-xl
     flex flex-col justify-between
   ">
     <div class="card-header
@@ -18,21 +17,20 @@
     </div>
     <form v-on:submit.prevent="onSubmit">
       <div class="card-info
-        w-full
-        p-6 space-y-6
+        w-full p-6 space-y-6
       ">
-        <InputField label="Title *" v-model="title"/>
-        <InputField label="Enter the address *" v-model="address"/>
+        <InputField label="Title *" v-model="data.title"/>
+        <InputField label="Enter the address *" v-model="data.address"/>
         <div class="contact-info-header py-2
           border-b-2 border-cyan-100
           text-sm text-cyan-500 tracking-wide
         ">
           CONTACT INFORMATION
         </div>
-        <InputField label="Full name *" v-model="name"/>
-        <InputField label="Job position *" v-model="position"/>
-        <InputField label="Email address *" v-model="email"/>
-        <InputField label="Phone *" v-model="phone"/>
+        <InputField label="Full name *" v-model="data.name"/>
+        <InputField label="Job position *" v-model="data.position"/>
+        <InputField label="Email address *" v-model="data.email"/>
+        <InputField label="Phone *" v-model="data.phone"/>
       </div>
       <div class="card-save
         p-6
@@ -56,7 +54,7 @@
         type: Boolean,
         default: false,
       },
-      office: {
+      rental: {
       },
     },
     data() {
@@ -64,12 +62,20 @@
         // Set up header for details section
         detailType: this.edit ? "Edit" : "New",
         // Fill input forms with existing data, if any
-        title: this.office ? this.office.title : '',
-        address: this.office ? this.office.address : '',
-        name: this.office ? this.office.name : '',
-        position: this.office ? this.office.position : '',
-        email: this.office ? this.office.email : '',
-        phone: this.office ? this.office.phone : '',
+        // title: this.rental ? this.rental.title : '',
+        // address: this.rental ? this.rental.address : '',
+        // name: this.rental ? this.rental.name : '',
+        // position: this.rental ? this.rental.position : '',
+        // email: this.rental ? this.rental.email : '',
+        // phone: this.rental ? this.rental.phone : '',
+        data: this.rental ? { ...this.rental } : {
+          title: '',
+          address: '',
+          name: '',
+          position: '',
+          email: '',
+          phone: '',
+        },
       };
     },
     methods: {
@@ -78,16 +84,16 @@
         this.$emit('input', value);
       },
       onSubmit() {
-        const data = {
-          title: this.title,
-          address: this.address,
-          name: this.name,
-          position: this.position,
-          email: this.email,
-          phone: this.phone,
-        }
-        console.log(`LD - Submitting data from form: ${JSON.stringify(data)}`);
-        this.$emit('save', data);
+        // const data = {
+        // 	title: this.title,
+        // 	address: this.address,
+        // 	name: this.name,
+        // 	position: this.position,
+        // 	email: this.email,
+        // 	phone: this.phone,
+        // }
+        console.log(`LD - Submitting data from form: ${JSON.stringify(this.data)}`);
+        this.$emit('save', this.data);
         this.$emit('input', false);
       }
     }

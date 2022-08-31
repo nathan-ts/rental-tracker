@@ -21,7 +21,11 @@
 		</div>
 		<!-- New Location Details visible if '+' button clicked -->
 		<div v-if="showNewLocation">
-			<LocationDetail :edit="false" @input="e => showDetail(e)"/>
+			<LocationDetail
+				:edit="false"
+				@input="showDetail"
+				@save="newRental"
+			/>
 		</div>
 	</div>
 </template>
@@ -34,7 +38,12 @@ export default {
 		}
 	},
 	methods: {
+		newRental(data) {
+			console.log(`NL - adding new rental`);
+			this.$emit('new', data);
+		},
 		showDetail(value) {
+			console.log(`NL - show new location detail: ${value}`);
 			this.showNewLocation = value;
 		},
 	},

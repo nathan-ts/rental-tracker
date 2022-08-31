@@ -97,19 +97,15 @@
     },
     methods: {
       showOpen(value) {
-        console.log(`RCO - show open rental card: ${value}`);
         this.$emit("input", value);
       },
       showDetail(value) {
-        console.log(`RCO - show edit details: ${value}`);
         this.showEditDetail = value;
       },
       editRental(data) {
-        console.log(`RCO - editing rental id ${this.rental.id}`);
 			  this.$emit('edit', data);
       },
       deleteRental() {
-        console.log(`RCO - deleting rental id ${this.rental.id}`);
         this.$emit('delete');
       }
     },

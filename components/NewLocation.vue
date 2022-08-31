@@ -39,11 +39,9 @@ export default {
 	},
 	methods: {
 		newRental(data) {
-			console.log(`NL - adding new rental`);
 			this.$emit('new', data);
 		},
 		showDetail(value) {
-			console.log(`NL - show new location detail: ${value}`);
 			this.showNewLocation = value;
 		},
 	},

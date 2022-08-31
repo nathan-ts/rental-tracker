@@ -5,7 +5,6 @@
       <input
         type="text"
         v-model="model"
-        xrequired="required"
         :class="{
           'border-gray-400': !this.error,
           'border-red-300': this.error,

@@ -79,14 +79,12 @@
     },
     methods: {
       showDetail(value) {
-        console.log(`LD - show details: ${value}`);
         this.$emit('input', value);
       },
       onSubmit() {
         if (this.validInputs) {
-          console.log(`LD - Submitting data from form: ${JSON.stringify(this.data)}`);
-          this.$emit('save', this.data);
-          this.$emit('input', false);
+          this.$emit('save', this.data); // sends data object up to parent
+				  this.$emit('input', false); // closes detail vue
         } else {
           // Forces all input field children to run their error check
           this.$refs.titleInput.validateInput(this.data.title);

@@ -44,15 +44,12 @@
     },
     methods: {
       showOpen(value) {
-        console.log(`RC - show open rental card: ${value}`);
         this.showOpenCard = value;
       },
       editRental(data) {
-        console.log(`RC - editing rental: ${this.rental.id}`);
         this.$emit('edit', this.rental.id, data);
       },
       deleteRental() {
-        console.log(`RC - deleting rental: ${this.rental.id}`);
         this.showOpenCard = false;
         this.$emit('delete', this.rental.id);
       }

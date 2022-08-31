@@ -1,5 +1,7 @@
 <template>
-	<div class="h-max min-h-screen bg-gray-100">
+	<div class="h-max min-h-screen bg-gray-100"
+		style="padding-left: calc(100vw - 100%);"
+	>
 		<div class="
 			flex flex-col
 			mx-auto
@@ -15,9 +17,3 @@
 
 <script>
 </script>
-
-<style>
-html,body {
-	height:100%;
-}
-</style>

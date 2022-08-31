@@ -13,6 +13,7 @@ export default {
 	data() {
     return {
 			rentals: mockData,
+      id: mockData.length,
     };
   },
 	methods: {

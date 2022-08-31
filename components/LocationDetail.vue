@@ -62,6 +62,7 @@
       rental: {
       },
     },
+    emits: ['input', 'save'],
     data() {
       return {
         // Set up header for details section

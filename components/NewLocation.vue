@@ -32,6 +32,7 @@
 
 <script>
 export default {
+  emits: ['new'],
 	data() {
 		return {
 			showNewLocation: false,

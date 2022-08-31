@@ -17,54 +17,53 @@
         class="text-xl text-red-300 float-right mr-3 -mt-8"
       />
     </label>
-    <div v-if="error" class="text-sm text-red-300 pt-1">{{ error }}</div>
-  </div>
-  </template>
+  <div v-if="error" class="text-sm text-red-300 pt-1">{{ error }}</div>
+</div>
+</template>
   
-  <script>
-  export default {
-    props: {
-      label: {
-        required: true,
-        type: String,
+<script>
+export default {
+  props: {
+    label: {
+      required: true,
+      type: String,
+    },
+    value: {
+      type: String,
+    },
+    default: {
+      type: String,
+    },
+  },
+  emits: ['input'],
+  computed: {
+    model: {
+      get() {
+        return this.value;
       },
-      value: {
-        type: String,
-      },
-      default: {
-        type: String,
+      set(value) {
+        // Check if the input field is empty
+        this.validateInput(value);
+        // Emit value so parent can read it
+        this.$emit('input', value);
       },
     },
-    computed: {
-      model: {
-        get() {
-          return this.value;
-        },
-        set(value) {
-          // error checking
-          this.validateInput(value);
-          // emit value so parent can read it
-          this.$emit('input', value);
-        },
-      },
-    },
-    data() {
-      return {
-        error: '',
-      };
-    },
-    methods: {
-      validateInput(value) {
-        if (!value) {
-          this.error = 'This field cannot be empty';
-          return false;
-        }
-        this.error = '';
-        return true;
+  },
+  data() {
+    return {
+      error: '',
+    };
+  },
+  methods: {
+    // Validation placed in method so parent can access if necessary
+    validateInput(value) {
+      if (!value) {
+        this.error = 'This field cannot be empty';
+        return false;
       }
-    },
-  }
-  </script>
-  
-  <style>
-  </style>
+      this.error = '';
+      return true;
+    }
+  },
+}
+</script>

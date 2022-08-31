@@ -105,6 +105,8 @@
         this.showEditDetail = value;
       },
       editRental(data) {
+        console.log(`RCO - editing rental id ${this.rental.id}`);
+			  this.$emit('edit', data);
       },
       deleteRental() {
         console.log(`RCO - deleting rental id ${this.rental.id}`);

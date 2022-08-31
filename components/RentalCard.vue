@@ -22,8 +22,9 @@
     <div v-if="showOpenCard">
       <RentalCardOpen
         :rental="rental"
-        @input="e => showOpen(e)"
-        @delete="deleteRental()"
+        @input="showOpen"
+        @edit="editRental"
+        @delete="deleteRental"
       />
     </div>
   </div>
@@ -35,6 +36,7 @@
       rental: {
       }
     },
+    emits: ['edit', 'delete'],
     data() {
       return {
         showOpenCard: false,
@@ -45,6 +47,10 @@
         console.log(`RC - show open rental card: ${value}`);
         this.showOpenCard = value;
       },
+      editRental(data) {
+        console.log(`RC - editing rental: ${this.rental.id}`);
+        this.$emit('edit', this.rental.id, data);
+      },
       deleteRental() {
         console.log(`RC - deleting rental: ${this.rental.id}`);
         this.showOpenCard = false;
@@ -53,4 +59,3 @@
     },
   };
   </script>
-  

@@ -16,7 +16,7 @@
         @click="showDetail(false)"
       />
     </div>
-    <form>
+    <form v-on:submit.prevent="onSubmit">
       <div class="card-info
         w-full
         p-6 space-y-6
@@ -61,8 +61,6 @@
     },
     data() {
       return {
-        // label: "Test",
-        // model: "",
         // Set up header for details section
         detailType: this.edit ? "Edit" : "New",
         // Fill input forms with existing data, if any
@@ -77,8 +75,21 @@
     methods: {
       showDetail(value) {
         console.log(`LD - show details: ${value}`);
-        this.$emit("input", value);
+        this.$emit('input', value);
       },
+      onSubmit() {
+        const data = {
+          title: this.title,
+          address: this.address,
+          name: this.name,
+          position: this.position,
+          email: this.email,
+          phone: this.phone,
+        }
+        console.log(`LD - Submitting data from form: ${JSON.stringify(data)}`);
+        this.$emit('save', data);
+        this.$emit('input', false);
+      }
     }
   }
   // add save button validation on each input field's values to ensure none are empty

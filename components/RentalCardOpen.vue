@@ -47,19 +47,25 @@
           flex flex-row justify-between
           text-xs tracking-wide
         ">
-          <div class="edit-icon flex flex-row content-center space-x-3 text-gray-400">
+          <div class="edit-icon
+            flex flex-row content-center
+            space-x-3 text-gray-400"
+            @click="showDetail(true)"
+          >
             <font-awesome-icon
               :icon="['fas', 'pen']"
               class="text-xl"
-              @click="showDetail(true)"
             />
             <div>EDIT</div>
           </div>
-          <div class="delete-icon flex flex-row content-center space-x-3 text-red-400">
+          <div class="delete-icon
+            flex flex-row content-center
+            space-x-3 text-red-400"
+            @click="deleteRental"
+          >
             <font-awesome-icon
               :icon="['fas', 'trash-can']"
               class="text-xl"
-              @click="deleteRental()"
             />
             <div>DELETE</div>
           </div>
@@ -67,7 +73,12 @@
       </div>
     </div>
     <div v-if="showEditDetail">
-      <LocationDetail :edit="true" :rental="rental" @input="e => showDetail(e)"/>
+      <LocationDetail
+        :edit="true"
+        :rental="rental"
+        @input="showDetail"
+        @save="editRental"
+      />
     </div>
   </div>
   </template>
@@ -78,6 +89,7 @@
       rental: {
       }
     },
+    emits: ['input', 'edit', 'delete'],
     data() {
       return {
         showEditDetail: false,
@@ -91,6 +103,8 @@
       showDetail(value) {
         console.log(`RCO - show edit details: ${value}`);
         this.showEditDetail = value;
+      },
+      editRental(data) {
       },
       deleteRental() {
         console.log(`RCO - deleting rental id ${this.rental.id}`);

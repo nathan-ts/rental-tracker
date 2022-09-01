@@ -24,3 +24,32 @@ Generate production build: `nuxt generate`
 
 ## Screenshots
 
+Home Screen
+![home](docs/home.jpg)
+
+New Location
+![new location](docs/new.jpg)
+
+New Location, showing errors
+![new location, errors](docs/new-error.jpg)
+
+New Location, completed
+![new location, completed](docs/new-complete.jpg)
+
+New Location added to home screen
+![new location added](docs/new-added.jpg)
+
+Open Location
+![open location](docs/open.jpg)
+
+Open Location, showing hover on edit
+![open location, hover on edit](docs/open-hover.jpg)
+
+Edit Location
+![edit location](docs/open-edit.jpg)
+
+Edit Location, saved
+![edit location saved](docs/open-edit-saved.jpg)
+
+Deleted Locations
+![deleted several locations](docs/deleted.jpg)

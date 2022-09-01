@@ -11,7 +11,7 @@
       <div class="h3 text-base font-bold">{{ detailType }} Location</div>
       <font-awesome-icon
         :icon="['fas', 'xmark']"
-        class="text-xl text-gray-300"
+        class="text-xl text-gray-300 hover:text-gray-500"
         @click="showDetail(false)"
       />
     </div>
@@ -117,7 +117,7 @@ export default {
 </script>
 
 <style>
-  .save-btn {
+  .save-btn, .fa-xmark {
     transition: all 0.3s ease-in-out;
   }
   </style>

@@ -18,9 +18,9 @@ Node Version: [16](https://nodejs.org/dist/latest-v16.x/docs/api/)
 
 Install dependencies: `npm i`
 
-Run in dev mode: `npm run dev`
+Run site in dev mode: `npm run dev`
 
-Generate production build: `nuxt generate`
+Generate production build: `npm run generate`
 
 ## Screenshots
 

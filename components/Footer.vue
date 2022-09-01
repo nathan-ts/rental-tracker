@@ -6,7 +6,7 @@
   space-y-2
 ">
   <div class="text-gray-400">
-    This project is for test purposes only.
+    This project is for educational purposes only.
   </div>
   <a href="http://www.nathantsang.dev" class="text-sm text-cyan-500">
     WWW.NATHANTSANG.DEV

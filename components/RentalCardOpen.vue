@@ -19,7 +19,7 @@
         </div>
         <font-awesome-icon
           :icon="['fas', 'angle-up']"
-          class="text-xl"
+          class="text-white text-xl rounded-lg"
           @click="showOpen(false)"
         />
       </div>

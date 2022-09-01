@@ -65,9 +65,6 @@
   .fa-angle-down {
 	transition: all 0.3s ease-in-out;
   }
-  .fa-angle-down:hover {
-    box-shadow: 0px 0px 10px 10px rgba(0, 255, 255, 0.3);
-  }
   .slide-enter-active {
     transition: opacity 0.5s;
   }

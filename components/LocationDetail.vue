@@ -37,84 +37,87 @@
         flex flex-row
       ">
         <input type="submit" value="Save"
-          cl="save-btn rounded-md
-          text-white
-          bg-cyan-600
-          px-6 py-2"
           :class="{
-            'bg-cyan-600': this.validInputs,
+            'bg-cyan-600 hover:bg-cyan-800': this.validInputs,
             'bg-gray-300': !this.validInputs,
-            'save-btn rounded-md text-white px-6 py-2': true,
+            'save-btn rounded-md text-white': true,
+            'px-6 py-2': true,
           }"
         />
       </div>
     </form>
   </div>
-  </template>
+</template>
   
-  <script>
-  export default {
-    props: {
-      edit: {
-        type: Boolean,
-        default: false,
-      },
-      rental: {
-      },
+<script>
+export default {
+  props: {
+    edit: {
+      type: Boolean,
+      default: false,
     },
-    emits: ['input', 'save'],
-    data() {
-      return {
-        // Set up header for details section
-        detailType: this.edit ? "Edit" : "New",
-        // Fill input forms with existing data, if any
-        data: this.rental ? { ...this.rental } : {
-          title: '',
-          address: '',
-          name: '',
-          position: '',
-          email: '',
-          phone: '',
-        },
-      };
+    rental: {
     },
-    mounted() {
-      // On component mount, focus on first input field)
-      this.focusFirstInput();
+  },
+  emits: ['input', 'save'],
+  data() {
+    return {
+      // Set up header for details section
+      detailType: this.edit ? "Edit" : "New",
+      // Fill input forms with existing data, if any
+      data: this.rental ? { ...this.rental } : {
+        title: '',
+        address: '',
+        name: '',
+        position: '',
+        email: '',
+        phone: '',
+      },
+    };
+  },
+  mounted() {
+    // On component mount, focus on first input field)
+    this.focusFirstInput();
+  },
+  methods: {
+    showDetail(value) {
+      this.$emit('input', value);
     },
-    methods: {
-      showDetail(value) {
-        this.$emit('input', value);
-      },
-      onSubmit() {
-        // Check if any input is empty before submitting
-        if (this.validInputs) {
-          this.$emit('save', this.data); // sends data object up to parent
-				  this.$emit('input', false); // closes detail vue
-        } else {
-          // Forces all input field children to run their error check
-          this.$refs.titleInput.validateInput(this.data.title);
-          this.$refs.addressInput.validateInput(this.data.address);
-          this.$refs.nameInput.validateInput(this.data.name);
-          this.$refs.positionInput.validateInput(this.data.position);
-          this.$refs.emailInput.validateInput(this.data.email);
-          this.$refs.phoneInput.validateInput(this.data.phone);
-        }
-      },
-      focusFirstInput() {
-        console.log(`getting first input`);
-        this.$refs.titleInput.focusInput();
-      },
-    },
-    computed: {
-      // Checks if any field is blank (computed for cached performance)
-      validInputs: function() {
-        if (!this.data.title || !this.data.address || !this.data.name ||
-          !this.data.position || !this.data.email || !this.data.phone) {
-            return false;
-        }
-        return true;
+    onSubmit() {
+      // Check if any input is empty before submitting
+      if (this.validInputs) {
+        this.$emit('save', this.data); // sends data object up to parent
+        this.$emit('input', false); // closes detail vue
+      } else {
+        // Forces all input field children to run their error check
+        this.$refs.titleInput.validateInput(this.data.title);
+        this.$refs.addressInput.validateInput(this.data.address);
+        this.$refs.nameInput.validateInput(this.data.name);
+        this.$refs.positionInput.validateInput(this.data.position);
+        this.$refs.emailInput.validateInput(this.data.email);
+        this.$refs.phoneInput.validateInput(this.data.phone);
       }
+    },
+    focusFirstInput() {
+      console.log(`getting first input`);
+      this.$refs.titleInput.focusInput();
+    },
+  },
+  computed: {
+    // Checks if any field is blank (computed for cached performance)
+    validInputs: function() {
+      if (!this.data.title || !this.data.address || !this.data.name ||
+        !this.data.position || !this.data.email || !this.data.phone) {
+          return false;
+      }
+      return true;
     }
+  },
+}
+</script>
+
+<style>
+  .save-btn {
+    transition: all 0.3s ease-in-out;
   }
-  </script>
+  </style>

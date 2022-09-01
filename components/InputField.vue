@@ -66,7 +66,7 @@ export default {
       return true;
     },
     focusInput() {
-			console.log(`Getting focus on ${this.$refs.inputField}`);
+      // Focus input on input field (called by parent)
 			this.$nextTick(() => {
 				this.$refs.inputField.focus();
   		});

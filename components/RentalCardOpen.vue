@@ -43,14 +43,17 @@
       ">
         <div class="line-break
           border-t-2 border-cyan-100
-          pt-6
+          pt-4
           flex flex-row justify-between
           text-xs tracking-wide
         ">
           <div class="edit-icon
             flex flex-row content-center
             space-x-3 text-gray-400
+            rounded-md p-2
             cursor-default
+            hover:bg-cyan-500
+            hover:text-white
             "
             @click="showDetail(true)"
           >
@@ -63,7 +66,10 @@
           <div class="delete-icon
             flex flex-row content-center
             space-x-3 text-red-400
+            rounded-md p-2
             cursor-default
+            hover:bg-cyan-500
+            hover:text-white
             "
             @click="deleteRental"
           >
@@ -107,7 +113,7 @@
         this.showEditDetail = value;
       },
       editRental(data) {
-			  this.$emit('edit', data);
+        this.$emit('edit', data);
       },
       deleteRental() {
         this.$emit('delete');
@@ -115,3 +121,9 @@
     },
   };
   </script>
+  
+  <style>
+  .edit-icon, .delete-icon {
+    transition: all 0.3s ease-in-out;
+  }
+  </style>

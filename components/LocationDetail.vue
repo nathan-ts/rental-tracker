@@ -79,6 +79,7 @@
       };
     },
     mounted() {
+      // On component mount, focus on first input field)
       this.focusFirstInput();
     },
     methods: {

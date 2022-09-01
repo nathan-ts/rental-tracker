@@ -15,7 +15,7 @@
         </div>
         <font-awesome-icon
           :icon="['fas', 'angle-down']"
-          class="text-cyan-600 text-xl"
+          class="text-cyan-600 text-xl rounded-lg"
           @click="showOpen(true)"
         />
       </div>
@@ -32,9 +32,9 @@
       </div>
     </transition>
   </div>
-  </template>
+</template>
   
-  <script>
+<script>
   export default {
     props: {
       rental: {
@@ -59,9 +59,15 @@
       }
     },
   };
-  </script>
+</script>
   
-  <style>
+<style>
+  .fa-angle-down {
+	transition: all 0.3s ease-in-out;
+  }
+  .fa-angle-down:hover {
+    box-shadow: 0px 0px 10px 10px rgba(0, 255, 255, 0.3);
+  }
   .slide-enter-active {
     transition: opacity 0.5s;
   }
@@ -74,4 +80,4 @@
   .slide-enter-to, .slide-leave {
     opacity: 1;
   }
-  </style>
+</style>

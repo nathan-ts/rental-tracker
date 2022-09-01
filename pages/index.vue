@@ -57,6 +57,6 @@ export default {
     opacity: 1;
   }
   .card-leave-active {
-    transition: all 300ms;
+    transition: all 300ms ease-in;;
   }
 </style>

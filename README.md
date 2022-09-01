@@ -6,9 +6,11 @@ Created by @nathan-ts
 
 To show and easily manage a list of rental properties and tenants. 
 
+NB: This project was created as a tool to learn how to use Vue and SFCs. 
+
 ## Live Demo
 
-Please visit [dps.nathantsang.dev](https://dps.nathantsang.dev/) for a live demo of the site.
+Please visit [rental.nathantsang.dev](https://rental.nathantsang.dev/) for a live demo of the site.
 
 ## Project Setup Instructions
 

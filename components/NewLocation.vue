@@ -5,7 +5,7 @@
 			<div v-if="!showNewLocation"
 				@click="showDetail(true)"
 				class="new-location
-					bg-cyan-600
+        bg-cyan-600 hover:bg-cyan-700
 					text-white text-base
 					m-4 px-6 py-4
 					rounded-lg shadow-xl
@@ -46,8 +46,6 @@ export default {
 		showDetail(value) {
 			this.showNewLocation = value;
 		},
-		// Note: this showDetail toggle could also be accomplished with
-		//       v-bind:is="LocationDetail"
 	},
 };
 </script>
@@ -64,5 +62,8 @@ export default {
 }
 .slide-new-deets-enter-active {
 	transition: all 0.5s;
+}
+.new-location {
+	transition: all 0.3s ease-in-out;
 }
 </style>

@@ -1,52 +1,52 @@
 <template>
-  <div class="new-location-detail
-    bg-white
-    m-4 rounded-lg shadow-xl
-    flex flex-col justify-between
+<div class="new-location-detail
+  bg-white
+  m-4 rounded-lg shadow-xl
+  flex flex-col justify-between
+">
+  <div class="card-header
+    w-full px-6 py-4
+    flex flex-row justify-between items-center
   ">
-    <div class="card-header
-      w-full px-6 py-4
-      flex flex-row justify-between items-center
+    <div class="h3 text-base font-bold">{{ detailType }} Location</div>
+    <font-awesome-icon
+      :icon="['fas', 'xmark']"
+      class="text-xl text-gray-300 hover:text-gray-500"
+      @click="showDetail(false)"
+    />
+  </div>
+  <form v-on:submit.prevent="onSubmit">
+    <div class="card-info
+      w-full p-6 space-y-6
     ">
-      <div class="h3 text-base font-bold">{{ detailType }} Location</div>
-      <font-awesome-icon
-        :icon="['fas', 'xmark']"
-        class="text-xl text-gray-300 hover:text-gray-500"
-        @click="showDetail(false)"
+      <InputField label="Title *" ref="titleInput" v-model="data.title"/>
+      <InputField label="Enter the address *" ref="addressInput" v-model="data.address"/>
+      <div class="contact-info-header py-2
+        border-b-2 border-cyan-100
+        text-sm text-cyan-500 tracking-wide
+      ">
+        CONTACT INFORMATION
+      </div>
+      <InputField label="Full name *" ref="nameInput" v-model="data.name"/>
+      <InputField label="Job position *" ref="positionInput" v-model="data.position"/>
+      <InputField label="Email address *" ref="emailInput" v-model="data.email"/>
+      <InputField label="Phone *" ref="phoneInput" v-model="data.phone"/>
+    </div>
+    <div class="card-save
+      p-6
+      flex flex-row
+    ">
+      <input type="submit" value="Save"
+        :class="{
+          'bg-cyan-600 hover:bg-cyan-800': this.validInputs,
+          'bg-gray-300': !this.validInputs,
+          'save-btn rounded-md text-white': true,
+          'px-6 py-2': true,
+        }"
       />
     </div>
-    <form v-on:submit.prevent="onSubmit">
-      <div class="card-info
-        w-full p-6 space-y-6
-      ">
-        <InputField label="Title *" ref="titleInput" v-model="data.title"/>
-        <InputField label="Enter the address *" ref="addressInput" v-model="data.address"/>
-        <div class="contact-info-header py-2
-          border-b-2 border-cyan-100
-          text-sm text-cyan-500 tracking-wide
-        ">
-          CONTACT INFORMATION
-        </div>
-        <InputField label="Full name *" ref="nameInput" v-model="data.name"/>
-        <InputField label="Job position *" ref="positionInput" v-model="data.position"/>
-        <InputField label="Email address *" ref="emailInput" v-model="data.email"/>
-        <InputField label="Phone *" ref="phoneInput" v-model="data.phone"/>
-      </div>
-      <div class="card-save
-        p-6
-        flex flex-row
-      ">
-        <input type="submit" value="Save"
-          :class="{
-            'bg-cyan-600 hover:bg-cyan-800': this.validInputs,
-            'bg-gray-300': !this.validInputs,
-            'save-btn rounded-md text-white': true,
-            'px-6 py-2': true,
-          }"
-        />
-      </div>
-    </form>
-  </div>
+  </form>
+</div>
 </template>
   
 <script>
@@ -117,7 +117,7 @@ export default {
 </script>
 
 <style>
-  .save-btn, .fa-xmark {
-    transition: all 0.3s ease-in-out;
-  }
-  </style>
+.save-btn, .fa-xmark {
+  transition: all 0.3s ease-in-out;
+}
+</style>

@@ -1,17 +1,17 @@
 <template>
-	<main class="flex p-4 text-lg bg-gray-100 flex-col flex-1">
-		<NewLocation @new="newRental"/>
-		<div v-for="rental in rentals.slice().reverse()">
-      <transition name="card">
-        <RentalCard
-          :rental="rental"
-          :key="rental.id"
-          @edit="(id, data) => editRental(id, data)"
-          @delete="deleteRental"
-        />
-      </transition>
-		</div>
-	</main>
+<main class="flex p-4 text-lg bg-gray-100 flex-col flex-1">
+  <NewLocation @new="newRental"/>
+  <div v-for="rental in rentals.slice().reverse()">
+    <transition name="card">
+      <RentalCard
+        :rental="rental"
+        :key="rental.id"
+        @edit="(id, data) => editRental(id, data)"
+        @delete="deleteRental"
+      />
+    </transition>
+  </div>
+</main>
 </template>
 
 <script>
@@ -50,13 +50,13 @@ export default {
 </script>
 
 <style>
-  .card-leave-to {
-    opacity: 0;
-  }
-  .card-leave {
-    opacity: 1;
-  }
-  .card-leave-active {
-    transition: all 300ms ease-in;;
-  }
+.card-leave-to {
+  opacity: 0;
+}
+.card-leave {
+  opacity: 1;
+}
+.card-leave-active {
+  transition: all 300ms ease-in;;
+}
 </style>

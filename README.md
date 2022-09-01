@@ -1,6 +1,6 @@
 # Rental Property Tracker
 
-Created by @nathan-ts
+Created by [@nathan-ts](https://github.com/nathan-ts).
 
 ## Purpose
 

@@ -78,11 +78,15 @@
         },
       };
     },
+    mounted() {
+      this.focusFirstInput();
+    },
     methods: {
       showDetail(value) {
         this.$emit('input', value);
       },
       onSubmit() {
+        // Check if any input is empty before submitting
         if (this.validInputs) {
           this.$emit('save', this.data); // sends data object up to parent
 				  this.$emit('input', false); // closes detail vue
@@ -95,7 +99,11 @@
           this.$refs.emailInput.validateInput(this.data.email);
           this.$refs.phoneInput.validateInput(this.data.phone);
         }
-      }
+      },
+      focusFirstInput() {
+        console.log(`getting first input`);
+        this.$refs.titleInput.focusInput();
+      },
     },
     computed: {
       // Checks if any field is blank (computed for cached performance)

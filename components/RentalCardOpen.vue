@@ -49,7 +49,9 @@
         ">
           <div class="edit-icon
             flex flex-row content-center
-            space-x-3 text-gray-400"
+            space-x-3 text-gray-400
+            cursor-default
+            "
             @click="showDetail(true)"
           >
             <font-awesome-icon
@@ -60,7 +62,9 @@
           </div>
           <div class="delete-icon
             flex flex-row content-center
-            space-x-3 text-red-400"
+            space-x-3 text-red-400
+            cursor-default
+            "
             @click="deleteRental"
           >
             <font-awesome-icon

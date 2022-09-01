@@ -5,6 +5,7 @@
       <input
         type="text"
         v-model="model"
+        ref="inputField"
         :class="{
           'border-gray-400': !this.error,
           'border-red-300': this.error,
@@ -63,7 +64,13 @@ export default {
       }
       this.error = '';
       return true;
-    }
+    },
+    focusInput() {
+			console.log(`Getting focus on ${this.$refs.inputField}`);
+			this.$nextTick(() => {
+				this.$refs.inputField.focus();
+  		});
+		},
   },
 }
 </script>

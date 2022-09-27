@@ -4,7 +4,7 @@ Created by [@nathan-ts](https://github.com/nathan-ts).
 
 ## Purpose
 
-To show and easily manage a list of rental properties and tenants. 
+To show and easily manage a list of rental properties and tenants. Uses mock data to seed the initial view. 
 
 NB: This project was created as a tool to learn how to use Vue and SFCs. 
 
